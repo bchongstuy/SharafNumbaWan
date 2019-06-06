@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Elastic Collision Demo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="collision.css">
+</head>
+<body>
+  <div class="container">
+	  <h1 align="center">Elastic Collision Demo</h1>
+	  <hr>
+	  <div class="jumbotron">
+      <div class="row">
+        <div class="col-8">
+          <svg xmlns="http://www.w3.org/2000/svg" height = "675" width = "675" id = "img">
+						<circle id="r" fill="red"></circle>
+						<circle id="b" fill="blue"></circle>
+						<!-- <defs>
+					    <marker id="arr" markerWidth="10" markerHeight="6" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+					      <path d="M0,0 L0,6 L9,3 z" fill="#f00" />
+					    </marker>
+					  </defs> -->
+						<polygon fill="red"></polygon>
+					  <line stroke="black" stroke-width="5"></line>
+          </svg>
+        </div>
+
+        <div class="col-4" id="bar">
+					<br><br><br>
+					<div id="setup">
+						<h3>Red Ball Mass:</h3> <input type="number" class="form-control" id="rm" value="10">
+						<h3>Blue Ball Mass:</h3> <input type="number" class="form-control" id="bm" value="10">
+						<br>
+						<button type="button" class="btn btn-outline-dark" id="start">Start</button>
+					</div>
+
+					<div id="display">
+						<table class="table">
+						  <thead class="thead-dark">
+						    <tr>
+						      <th scope="col"></th>
+						      <th scope="col">Vx</th>
+						      <th scope="col">Vy</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">Red Ball</th>
+						      <td id="vxr"></td>
+						      <td id="vyr"></td>
+						    </tr>
+						    <tr>
+						      <th scope="row">Blue Ball</th>
+						      <td id="vxb"></td>
+						      <td id="vyb"></td>
+						    </tr>
+						  </tbody>
+						</table>
+						<button type="button" class="btn btn-outline-dark" id="stop">Stop</button>
+
+					</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	<script type="text/javascript" src="collision.js">
+	</script>
+
+</body>
+</html>
