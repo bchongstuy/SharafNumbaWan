@@ -12,6 +12,14 @@ var vyr = document.getElementById("vyr");
 var vxb = document.getElementById("vxb");
 var vyb = document.getElementById("vyb");
 
+var pxr = document.getElementById("pxr");
+var pyr = document.getElementById("pyr");
+var pxb = document.getElementById("pxb");
+var pyb = document.getElementById("pyb");
+
+var pxt = document.getElementById("pxt");
+var pyt = document.getElementById("pyt");
+
 var rm = document.getElementById("rm");
 var bm = document.getElementById("bm");
 
@@ -184,7 +192,7 @@ arrow.addEventListener('mouseup', endDrag);
 
 img.addEventListener('mousemove', drag);
 
-start.addEventListener('click', function(){
+start.addEventListener('click', functio-1n(){
   window.cancelAnimationFrame(id);
 
   setup.remove();
@@ -228,6 +236,14 @@ var update = function(){
   vxb.innerHTML = c2.vx.toFixed(3);
   vyb.innerHTML = -c2.vy.toFixed(3);
 
+  pxr.innerHTML = (c1.vx * c1.m).toFixed(3);
+  pyr.innerHTML = (-c1.vy * c1.m).toFixed(3);
+  pxb.innerHTML = (c2.vx * c2.m).toFixed(3);
+  pyb.innerHTML = (-c2.vy * c2.m).toFixed(3);
+
+  pxt.innerHTML = (c1.vx * c1.m + c2.vx * c2.m).toFixed(3);
+  pyt.innerHTML = (-c1.vy * c1.m - c2.vy * c2.m).toFixed(3);
+
   if (touching() && !touched){
     touched = true;
     var dir = Math.atan( (c2.y - c1.y) / (c2.x - c1.x) );
@@ -258,10 +274,10 @@ var update = function(){
     c1.vy = v1 * Math.sin(dirV);
   }
 
-  if ((c1.x < -r || c1.x > width + r || c1.y < -r || c1.y > height + r) &&
-      (c2.x < -r || c2.x > width + r || c2.y < -r || c2.y > height + r))
-      end();
-      
+  // if ((c1.x < -r || c1.x > width + r || c1.y < -r || c1.y > height + r) &&
+  //     (c2.x < -r || c2.x > width + r || c2.y < -r || c2.y > height + r))
+  //     end();
+
   c1.setAttribute("cx", c1.x);
   c1.setAttribute("cy", c1.y);
   c2.setAttribute("cx", c2.x);
