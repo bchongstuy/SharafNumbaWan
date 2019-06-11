@@ -17,6 +17,11 @@ var pyr = document.getElementById("pyr");
 var pxb = document.getElementById("pxb");
 var pyb = document.getElementById("pyb");
 
+var kr = document.getElementById("kr");
+var kb = document.getElementById("kb");
+var kt = document.getElementById("kt");
+
+
 var pxt = document.getElementById("pxt");
 var pyt = document.getElementById("pyt");
 
@@ -192,7 +197,7 @@ arrow.addEventListener('mouseup', endDrag);
 
 img.addEventListener('mousemove', drag);
 
-start.addEventListener('click', functio-1n(){
+start.addEventListener('click', function(){
   window.cancelAnimationFrame(id);
 
   setup.remove();
@@ -231,18 +236,23 @@ var update = function(){
   c2.x += c2.vx;
   c2.y += c2.vy;
 
-  vxr.innerHTML = c1.vx.toFixed(3);
-  vyr.innerHTML = -c1.vy.toFixed(3);
-  vxb.innerHTML = c2.vx.toFixed(3);
-  vyb.innerHTML = -c2.vy.toFixed(3);
+  vxr.innerHTML = c1.vx.toFixed(2);
+  vyr.innerHTML = -c1.vy.toFixed(2);
+  vxb.innerHTML = c2.vx.toFixed(2);
+  vyb.innerHTML = -c2.vy.toFixed(2);
 
-  pxr.innerHTML = (c1.vx * c1.m).toFixed(3);
-  pyr.innerHTML = (-c1.vy * c1.m).toFixed(3);
-  pxb.innerHTML = (c2.vx * c2.m).toFixed(3);
-  pyb.innerHTML = (-c2.vy * c2.m).toFixed(3);
+  pxr.innerHTML = (c1.vx * c1.m).toFixed(2);
+  pyr.innerHTML = (-c1.vy * c1.m).toFixed(2);
+  pxb.innerHTML = (c2.vx * c2.m).toFixed(2);
+  pyb.innerHTML = (-c2.vy * c2.m).toFixed(2);
 
-  pxt.innerHTML = (c1.vx * c1.m + c2.vx * c2.m).toFixed(3);
-  pyt.innerHTML = (-c1.vy * c1.m - c2.vy * c2.m).toFixed(3);
+  pxt.innerHTML = (c1.vx * c1.m + c2.vx * c2.m).toFixed(2);
+  pyt.innerHTML = (-c1.vy * c1.m - c2.vy * c2.m).toFixed(2);
+
+  kr.innerHTML = (0.5 * c1.m * (Math.pow(c1.vx, 2) + Math.pow(c1.vy, 2))).toFixed(2);
+  kb.innerHTML = (0.5 * c2.m * (Math.pow(c2.vx, 2) + Math.pow(c2.vy, 2))).toFixed(2);
+  kt.innerHTML = (0.5 * c1.m * (Math.pow(c1.vx, 2) + Math.pow(c1.vy, 2)) +
+                  0.5 * c2.m * (Math.pow(c2.vx, 2) + Math.pow(c2.vy, 2))).toFixed(2);
 
   if (touching() && !touched){
     touched = true;

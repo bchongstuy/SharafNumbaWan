@@ -11,8 +11,8 @@
 	  <hr>
 	  <div class="jumbotron">
       <div class="row">
-        <div class="col-8">
-          <svg xmlns="http://www.w3.org/2000/svg" height = "675" width = "675" id = "img">
+        <div class="col-7">
+          <svg xmlns="http://www.w3.org/2000/svg" height = "600" width = "600" id = "img">
 						<circle id="r" fill="red"></circle>
 						<circle id="b" fill="blue"></circle>
 						<!-- <defs>
@@ -25,9 +25,10 @@
           </svg>
         </div>
 
-        <div class="col-4" id="bar">
+        <div class="col-5" id="bar">
 					<br><br><br>
 					<div id="setup">
+						<br><br>
 						<h3>Red Ball Mass:</h3> <input type="number" class="form-control" id="rm" value="10">
 						<h3>Blue Ball Mass:</h3> <input type="number" class="form-control" id="bm" value="10">
 						<br>
@@ -43,6 +44,7 @@
 						      <th scope="col">v<sub>y</sub></th>
 									<th scope="col">p<sub>x</sub></th>
 									<th scope="col">p<sub>y</sub></th>
+									<th scope="col">K</th>
 						    </tr>
 						  </thead>
 						  <tbody>
@@ -52,6 +54,7 @@
 						      <td id="vyr"></td>
 									<td id="pxr"></td>
 						      <td id="pyr"></td>
+									<td id="kr"></td>
 						    </tr>
 						    <tr>
 						      <th scope="row">Blue Ball</th>
@@ -59,6 +62,7 @@
 						      <td id="vyb"></td>
 									<td id="pxb"></td>
 						      <td id="pyb"></td>
+									<td id="kb"></td>
 						    </tr>
 
 								<tr>
@@ -67,6 +71,7 @@
 						      <td></td>
 									<td id="pxt"></td>
 						      <td id="pyt"></td>
+									<td id="kt"></td>
 						    </tr>
 						  </tbody>
 						</table>
