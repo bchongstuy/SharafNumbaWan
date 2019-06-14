@@ -270,7 +270,7 @@ var update = function(){
     c2.vx = v2 * Math.cos(dir);
     c2.vy = v2 * Math.sin(dir);
 
-    var expr = Math.sqrt( Math.pow(sumM, 2) -
+    /* var expr = Math.sqrt( Math.pow(sumM, 2) -
                4 * c1.m * c2.m * Math.pow(Math.cos(phi), 2) );
     var v1 = v / sumM * expr;
     var theta = Math.asin(c2.m * Math.sin(2 * phi) / expr);
@@ -281,7 +281,9 @@ var update = function(){
 
     dirV += theta;
     c1.vx = v1 * Math.cos(dirV);
-    c1.vy = v1 * Math.sin(dirV);
+    c1.vy = v1 * Math.sin(dirV); */
+	c1.vx -= c2.vx * c2.m / c1.m;
+	c1.vy -= c2.vy * c2.m / c1.m;
   }
 
   // if ((c1.x < -r || c1.x > width + r || c1.y < -r || c1.y > height + r) &&
