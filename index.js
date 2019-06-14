@@ -110,13 +110,19 @@ var set = function(){
   line.y = c1.y;
   line.setAttribute("x1", line.x);
   line.setAttribute("y1", line.y);
-  var angle = Math.random() * 2 * Math.PI;
-  line.a = parseFloat(line.x) + Math.cos(angle) * 60;
-  line.b = parseFloat(line.y) + Math.sin(angle) * 60;
+  resetLine();
+  while (line.a <= 0 || line.a >= width ||
+      line.b <= 0 || line.b >= height)
+      resetLine();
   line.setAttribute("x2", line.a);
   line.setAttribute("y2", line.b);
   updateLine();
+}
 
+var resetLine = function(){
+  var angle = Math.random() * 2 * Math.PI;
+  line.a = parseFloat(line.x) + Math.cos(angle) * 60;
+  line.b = parseFloat(line.y) + Math.sin(angle) * 60;
 }
 
 set();
